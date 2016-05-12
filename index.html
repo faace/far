@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title ng-bind-html="site_title"></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="email=no" name="format-detection"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet/less" type="text/css" href="static/less/style.less"/>
+    <script src="static/js/less.js"></script>
+</head>
+
+<body>
+<div ng-view></div>
+<script>
+    window.ge = { // global object
+        debug: 1, // 0:release, 1:debug
+        version: 'VERSION',
+        path: {
+            root: './',
+            mod: './app/mod'
+        },
+        entry: {module: 'demo', controller: 'index', action: 'index', version: this.version || ''}, // define de defualt home site
+    }
+</script>
+<script src="core/zepto.min.js"></script>
+<script src="core/angular.min.js"></script>
+<script src="core/angular-route.min.js"></script>
+<script src="core/angular-sanitize.min.js"></script>
+<script src="core/sea.min.js"></script>
+<script src="app/load.js?VERSION"></script>
+
+</body>
+</html>
