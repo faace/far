@@ -7,27 +7,40 @@
     <meta content="email=no" name="format-detection"/>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- build:less -->
     <link rel="stylesheet/less" type="text/css" href="static/less/style.less"/>
     <script src="static/js/less.js"></script>
+    <!-- endbuild -->
 </head>
 
 <body>
 <div ng-view></div>
+<div class="g-mask-bg-30" id="initLoad">
+    <div class="g-center-vh g-loading">
+        <div class="g-center-vh line">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="g-center-vh circlebg"></div>
+    </div>
+</div>
 <script>
     window.ge = { // global object
-        debug: 1, // 0:release, 1:debug
+        debug: 1, // 0: release, 1: debug
         version: 'VERSION',
         path: {
             root: './',
             mod: './app/mod'
         },
-        entry: {module: 'demo', controller: 'index', action: 'index', version: this.version || ''}, // define de defualt home site
+        entry: {module: 'demo', controller: 'index', action: 'index', version: 'VERSION'} // define the defualt home site
     }
 </script>
 <script src="core/zepto.min.js"></script>
 <script src="core/angular.min.js"></script>
-<script src="core/angular-route.min.js"></script>
-<script src="core/angular-sanitize.min.js"></script>
 <script src="core/sea.min.js"></script>
 <script src="app/load.js?VERSION"></script>
 

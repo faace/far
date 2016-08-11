@@ -20,6 +20,8 @@
     "gulp-processhtml": "0.0.6",
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^1.0.1",
+    "gulp-replace": "^0.5.4",
+    "del": "^2.2.1",
     "less": "^1.7.5"
   }
 }

@@ -9,6 +9,10 @@ define(function (require, exports, module) {
             ge.$rootScope = $rootScope;
             $ngsea(app, ge.entry || {}); // set the default home site
             gf.setTitle('');
+
+
+
+            $('#initLoad').hide(); // 隐藏首次加载的等待窗口
         }]);
     module.exports = app;
 });
