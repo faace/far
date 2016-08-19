@@ -8,7 +8,7 @@ define(function (require, exports, module) {
         .run(['$rootScope', '$timeout', '$ngsea', '$location', function ($rootScope, $timeout, $ngsea, $location) {
             ge.$rootScope = $rootScope;
             $ngsea(app, ge.entry || {}); // set the default home site
-            gf.setTitle('');
+            ge.setTitle('');
 
 
 

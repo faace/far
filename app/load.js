@@ -1,7 +1,7 @@
 seajs.config({
     base: ge.path.root,
     alias: {},
-    'map': [[/^(.*\.(?:css|js))(?!\?)(.*)$/i, '$1?' + ge.version]],
+    map: [[/^(.*\.(?:css|js))(?!\?)(.*)$/i, '$1?' + ge.version]],
     paths: {
         'base': 'app/base',
         'mod': 'app/mod'
@@ -9,7 +9,7 @@ seajs.config({
 });
 
 // local the basic function
-var bootstrap_ng = function () {
+(function () {
     seajs.use([
         'base/function',
         'base/ngsea',
@@ -18,6 +18,13 @@ var bootstrap_ng = function () {
         'base/service'
     ], function () {
         angular.bootstrap(document, ["app"]);
+        if (ge.debug != 2) {
+            var url = ge.wxConfigHost + 'jsapi/config.js';
+            if (ge.debug == 1) {
+                url += '?debug=true';
+            }
+            seajs.use([url]);
+
+        }
     })
-};
-bootstrap_ng();
+})();

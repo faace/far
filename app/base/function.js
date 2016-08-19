@@ -13,7 +13,7 @@ define(function () {
         }).appendTo($body)
     };
 
-    window.gf = { // define some public functions
+    var fn = { // define some public functions
         getQueryString: function (key) { // get the query string from the url
             var reg = new RegExp("(^|[&|?])" + key + "=([^&]*)(&|$)", "i");
             var r = window.location.search.substr(1).match(reg);
@@ -44,7 +44,7 @@ define(function () {
         },
         setTitle: function (title) {
             ge.$rootScope.site_title = title && (title);
-            if (['iphone', 'ipad'].indexOf(gf.checkDevice()) > -1) _ios_set_title(ge.$rootScope.site_title)
+            if (['iphone', 'ipad'].indexOf(ge.checkDevice()) > -1) _ios_set_title(ge.$rootScope.site_title)
         },
         use: function (url, cb) { // load a script or css
             seajs.use(url, function () {
@@ -52,4 +52,7 @@ define(function () {
             });
         }
     };
+    for (var key in fn) {
+        ge[key] = fn[key];
+    }
 });

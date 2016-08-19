@@ -44,10 +44,10 @@ var run = function (gs) {
 
             if (option == '-test' || option == '-t') {
             } else if (option == '-product' || option == '-pd') {
-                html = html.replace(/debug(\s)*\:(\s)*(\d)*/, 'debug: 0')
+                html = html.replace(/debug(\s)*:(\s)*(\d)*/, 'debug: 0')
                     .replace(/VERSION/g, new Date().getTime());
             } else {
-                html = html.replace(/debug(\s)*\:(\s)*(\d)*/, 'debug: 1')
+                html = html.replace(/debug(\s)*:(\s)*(\d)*/, 'debug: 1')
                     .replace(/VERSION/g, new Date().getTime());
             }
             file.contents = new Buffer(html);
